@@ -1,7 +1,7 @@
 module_urlsnarf
 ===============
 
-FruityWiFi urlsnarf module
+BlackBlulb urlsnarf module
 
 
 v1.7
