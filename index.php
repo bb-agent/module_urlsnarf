@@ -20,7 +20,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>FruityWifi</title>
+<title>BlackBulb</title>
 <script src="../js/jquery.js"></script>
 <script src="../js/jquery-ui.js"></script>
 <link rel="stylesheet" href="../css/jquery-ui.css" />
@@ -63,14 +63,14 @@ $action = $_GET["action"];
 if ($newdata != "") {
 	//$newdata = ereg_replace(13,  "", $newdata); // DEPRECATED
     $newdata = preg_replace("/[\n\r]/",  "", $newdata);
-	$exec = "$bin_echo '$newdata' > /usr/share/fruitywifi/conf/spoofhost.conf";
-    exec_fruitywifi($exec);
+	$exec = "$bin_echo '$newdata' > /usr/share/blackbulb/conf/spoofhost.conf";
+    exec_blackbulb($exec);
 }
 
 // DELETE LOG
 if ($logfile != "" and $action == "delete") {
     $exec = "$bin_rm ".$mod_logs_history.$logfile.".log";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 }
 
 ?>

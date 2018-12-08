@@ -40,20 +40,20 @@ if($service == "urlsnarf") {
         // COPY LOG
         $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
         //exec("$bin_danger \"$exec\"", $dump); //DEPRECATED
-	exec_fruitywifi($exec);
+	exec_blackbulb($exec);
 
         $exec = "$bin_echo '' > $mod_logs";
         //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-        exec_fruitywifi($exec);
+        exec_blackbulb($exec);
 	
 	$exec = "$bin_urlsnarf -i $io_action >> $mod_logs &";
         //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-	exec_fruitywifi($exec);
+	exec_blackbulb($exec);
 	
     } else if($action == "stop") {
         $exec = "$bin_killall urlsnarf";
         //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-	exec_fruitywifi($exec);
+	exec_blackbulb($exec);
     }
 }
 
@@ -61,11 +61,11 @@ if ($install == "install_$mod_name") {
 
     $exec = "chmod 755 install.sh";
     //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     $exec = "$bin_sudo ./install.sh > $log_path/install.txt &";
     //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     header('Location: ../../install.php?module='.$mod_name);
     exit;
